@@ -11,9 +11,12 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     socket.on('chat message', (msg) => {
-      io.emit('chat message', msg);
+      io.emit('chat message', msg,);
+      io.emit('chat message', "user_name");
   });
+  
 });
+
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
